@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <title>@yield('title', 'Sistem informasi mahasiswa')</title>
 </head>
 <body>
@@ -12,13 +12,16 @@
         <div class="container">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a href="/mahasiswa" class="nav-link @yield('menuMahasiswa')">Data Mahasiswa</a>
+              <a href="{{route('mahasiswa')}}" class="nav-link @yield('menuMahasiswa')">Data Mahasiswa</a>
             </li>
             <li class="nav-item">
-              <a href="/dosen" class="nav-link @yield('menuDosen')">Data Dosen</a>
+              <a href="{{route('dosen')}}" class="nav-link @yield('menuDosen')">Data Dosen</a>
             </li>
             <li class="nav-item">
-              <a href="/galery" class="nav-link @yield('menuGalery')">Galery</a>
+              <a href="{{route('gambar')}}" class="nav-link @yield('menuGalery')">Galery</a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('info', ['fakultas' => 'FMIPA', 'jurusan' => 'Matematika'])}}" class="nav-link @yield('menuInfo')">Info</a>
             </li>
           </ul>
         </div>
