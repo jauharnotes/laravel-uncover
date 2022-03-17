@@ -1,0 +1,6 @@
+/* Set warna background dan teks untuk tag <h1> */
+h1 {
+    background-color: #beaa34;
+    color: #ffff;
+    text-align: center;
+}
