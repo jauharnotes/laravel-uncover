@@ -250,8 +250,19 @@ class CollectionController extends Controller
 
         $matkuls = collect([$matkul00, $matkul001, $matkul002, $matkul003]);
 
+        // tampilkan semua mata kuliah di semester 3
         $hasil = $matkuls->groupBy("semester")->get(3)->pluck("namaMatkul")->all();
         echo 'Nama mata kuliah di semester 3: ' . implode(', ', $hasil);
+
+        echo "<hr>";
+
+        // urutkan mata kuliah berdasarkan jumlah sks (dari sks terbesar ke sks terkecil), lalu tampilkan sebagai string
+        $matkulsSort = $matkuls->sortByDesc("jumlahSks");
+        $stringMatkul = "";
+        foreach($matkulsSort as $matkul) {
+            $stringMatkul .= "$matkul->namaMatkul ($matkul->jumlahSks), ";
+        }
+        echo 'Nama mata kuliah: ' . substr($stringMatkul, 0, -2);
     }
 
 
