@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 
 class MahasiswaController extends Controller
 {
+    /*
     public function index()
     {
         return "Berhasil di proses";
@@ -80,5 +81,23 @@ class MahasiswaController extends Controller
     public function statement() {
         $result = DB::statement('TRUNCATE mahasiswas');
         return('Tabel mahasiswas sudah dikosongkan');
+    }
+    */
+
+
+
+    public function insert()
+    {
+        $result = DB::table('mahasiswas')->insert(
+            [
+                'nim' => '19003036',
+                'nama' => 'Sari Citra Lestari',
+                'tanggal_lahir' => '2001-12-31',
+                'ipk' => 3.5,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        );
+        dump($result);
     }
 }
